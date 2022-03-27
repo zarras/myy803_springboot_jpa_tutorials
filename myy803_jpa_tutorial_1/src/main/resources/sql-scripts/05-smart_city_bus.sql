@@ -18,7 +18,6 @@ CREATE TABLE `route` (
   `service_id` int DEFAULT NULL, 
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_service` FOREIGN KEY (`service_id`) REFERENCES `service` (`id`) 
-				ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE `stop` (
@@ -29,5 +28,4 @@ CREATE TABLE `stop` (
   `route_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_route` FOREIGN KEY (`route_id`) REFERENCES `route` (`id`) 
-				ON DELETE CASCADE ON UPDATE CASCADE
 );

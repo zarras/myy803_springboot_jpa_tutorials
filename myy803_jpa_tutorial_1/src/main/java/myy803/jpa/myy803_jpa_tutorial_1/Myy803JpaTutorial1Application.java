@@ -51,7 +51,7 @@ public class Myy803JpaTutorial1Application implements CommandLineRunner {
 			System.out.println("Required route not found");
 		
 		System.out.println("\n\nFinding Routes by name");
-		List<Route> someRoutes = 	routeDAORepository.findByName("RouteA");
+		List<Route> someRoutes = routeDAORepository.findByName("RouteA");
 		for(Route foundRoute : someRoutes)
 			System.out.println("Found route: " + foundRoute.toString());
 

@@ -27,7 +27,11 @@ public class Route {
 	@Column(name = "name")
 	private String name;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	// In general, CascadeType tells spring what to do with the references entities 
+	// when a respective operation is called on a Route object
+	// Since the relation with Service is many to one it is not correct 
+	// to propagate remove operation to the Service object 
+	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinColumn(name="service_id")
 	private Service service;
 	
