@@ -58,8 +58,6 @@ public class Myy803JpaTutorial0Application implements CommandLineRunner {
 			System.out.println("Found stop: " + foundStop.toString());
 
 		System.out.println("\n\nAll Done!!");
-
-		//logger.info("All Done !!");
 	}
 
 }

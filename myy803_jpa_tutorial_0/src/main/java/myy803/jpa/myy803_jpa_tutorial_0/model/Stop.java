@@ -12,7 +12,9 @@ import javax.persistence.Table;
 public class Stop {
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	// With IDENtITY generation is a responsibility of the DBMS, 
+	// AUTO is another alternative for letting the framework JPA provider be in charge 
+	@GeneratedValue(strategy=GenerationType.IDENTITY) 
 	private int id;
 	@Column(name = "name")
 	private String name;

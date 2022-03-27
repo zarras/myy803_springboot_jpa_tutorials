@@ -9,6 +9,8 @@ import myy803.jpa.myy803_jpa_tutorial_0.model.Stop;
 
 @Repository
 public interface StopDAORepository extends JpaRepository<Stop, Integer> {
+	
 	Stop findById(int id);
+	
 	List<Stop> findByLatitude(double latitude);
 }
