@@ -3,18 +3,7 @@ package myy803.jpa.myy803_jpa_tutorial_1.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "route")
@@ -32,10 +21,12 @@ public class Route {
 	// Since the relation with Service is many to one it is not correct 
 	// to propagate remove operation to the Service object 
 	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE})
+	// specifies the foreign key based on which we will fetch the appropriate Service objects
 	@JoinColumn(name="service_id")
 	private Service service;
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	// specifies the foreign key based on which we will fetch the appropriate Stop objects
 	@JoinColumn(name="route_id")
 	private List<Stop> stops;
 	
@@ -89,12 +80,6 @@ public class Route {
 
 	@Override
 	public String toString() {
-//		String stopsString = null;
-//		if(stops != null)
-//			for(Stop stop : stops) {
-//				stopsString += "\n" + stop.toString();
-//			}
-		
 		return "Route [id=" + id + ", name=" + name + ", service=" + service + stops + "]";
 	}
 }

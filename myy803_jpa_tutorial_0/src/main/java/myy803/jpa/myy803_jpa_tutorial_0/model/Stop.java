@@ -1,19 +1,14 @@
 package myy803.jpa.myy803_jpa_tutorial_0.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "stop")
 public class Stop {
 	@Id
 	@Column(name = "id")
-	// With IDENtITY generation is a responsibility of the DBMS, 
-	// AUTO is another alternative for letting the framework JPA provider be in charge 
+	// With IDENΤITY generation is a responsibility of the DBMS, ids are unique at table level 
+	// AUTO is another alternative for letting the framework JPA provider be in charge, by default all ids will be UNIQUE at db level
 	@GeneratedValue(strategy=GenerationType.IDENTITY) 
 	private int id;
 	@Column(name = "name")

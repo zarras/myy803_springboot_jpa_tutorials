@@ -11,6 +11,9 @@ import myy803.jpa.myy803_jpa_tutorial_0.model.Stop;
 public interface StopDAORepository extends JpaRepository<Stop, Integer> {
 	
 	Stop findById(int id);
+	// findAll(), count(), delete(), save(), .... derived from base interface
+	// https://www.tutorialspoint.com/spring_boot_jpa/spring_boot_jpa_repository_methods.htm
 	
 	List<Stop> findByLatitude(double latitude);
+	// more options https://www.baeldung.com/spring-data-derived-queries
 }
