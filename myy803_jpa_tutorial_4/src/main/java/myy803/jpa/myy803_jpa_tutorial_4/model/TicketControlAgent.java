@@ -11,7 +11,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "ticket_control_agent")
+@Table(name = "ticket_control_agents")
 public class TicketControlAgent {
 	@Id
 	@Column(name = "id")

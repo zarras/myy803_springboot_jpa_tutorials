@@ -3,7 +3,7 @@ package myy803.jpa.myy803_jpa_tutorial_0.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "stop")
+@Table(name = "stops")
 public class Stop {
 	@Id
 	@Column(name = "id")
