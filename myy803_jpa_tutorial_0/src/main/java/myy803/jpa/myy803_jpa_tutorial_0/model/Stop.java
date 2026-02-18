@@ -67,6 +67,11 @@ public class Stop {
 		this.longtitude = longtitude;
 	}
 
+	/**
+	 * Implementation from https://www.baeldung.com/java-find-distance-between-points
+	 * @param other
+	 * @return
+	 */
 	public double distanceFrom(Stop other){
 		double lat1Rad = Math.toRadians(latitude);
 		double lat2Rad = Math.toRadians(other.latitude);
