@@ -1,4 +1,4 @@
-package myy803.jpa.myy803_jpa_tutorial_0;
+package myy803.jpa.myy803_jpa_tutorial_4;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
