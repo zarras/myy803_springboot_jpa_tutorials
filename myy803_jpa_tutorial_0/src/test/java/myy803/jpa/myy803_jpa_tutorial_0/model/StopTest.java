@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Unit tests for the domain logic
+ */
 public class StopTest {
 
 
@@ -15,7 +18,6 @@ public class StopTest {
     void setup(){
 
         syntagma = new Stop("Syntagma", 37.97569448870225, 23.73471989313159);
-
 
     }
 

@@ -9,6 +9,9 @@ import org.springframework.test.context.jdbc.Sql;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Integration tests for queries and persistence logic
+ */
 @Sql(
         scripts = "/import.sql",
         executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD
