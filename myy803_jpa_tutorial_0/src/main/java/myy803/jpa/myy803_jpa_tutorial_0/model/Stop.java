@@ -5,16 +5,22 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "stops")
 public class Stop {
+
+	public static final double EARTH_RADIUS = 6371;
+
 	@Id
 	@Column(name = "id")
 	// With IDENΤITY generation is a responsibility of the DBMS, ids are unique at table level 
 	// AUTO is another alternative for letting the framework JPA provider be in charge, by default all ids will be UNIQUE at db level
 	@GeneratedValue(strategy=GenerationType.IDENTITY) 
 	private int id;
-	@Column(name = "name")
+
+	@Column(name = "name", unique = true)
 	private String name;
+
 	@Column(name = "latitude")
 	private double latitude;
+
 	@Column(name = "longtitude")
 	private double longtitude;
 	
@@ -59,6 +65,19 @@ public class Stop {
 
 	public void setLongtitude(double longtitude) {
 		this.longtitude = longtitude;
+	}
+
+	public double distanceFrom(Stop other){
+		double lat1Rad = Math.toRadians(latitude);
+		double lat2Rad = Math.toRadians(other.latitude);
+		double lon1Rad = Math.toRadians(longtitude);
+		double lon2Rad = Math.toRadians(other.longtitude);
+
+		double x = (lon2Rad - lon1Rad) * Math.cos((lat1Rad + lat2Rad) / 2);
+		double y = (lat2Rad - lat1Rad);
+		double distance = Math.sqrt(x * x + y * y) * EARTH_RADIUS;
+
+		return distance;
 	}
 
 	@Override
