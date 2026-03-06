@@ -82,6 +82,14 @@ public class Route {
 		stops.add(stop);
 	}
 
+	public Driver getDriver() {
+	    return driver;
+	}
+
+	public void setDriver(Driver driver) {
+	    this.driver = driver;
+	}
+	
 	@Override
 	public String toString() {
 		return "Route [id=" + id + ", name=" + name + ", service=" + service + stops + "]";

@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>myy803.jpa</groupId>
-	<artifactId>myy803_jpa_tutorial_3</artifactId>
+	<artifactId>myy803_jpa_tutorial_4</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>myy803_jpa_tutorial_3</name>
+	<name>myy803_jpa_tutorial_4</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -44,6 +44,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+		    <groupId>com.h2database</groupId>
+    		<artifactId>h2</artifactId>
+    		<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
